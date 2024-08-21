@@ -3,3 +3,28 @@
   padding: 0;
   margin: 0;
 }
+
+/*Add a light pastel gradient background and update the typography*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Great Vibes', cursive; 
+  font-size: 3rem;
+  color: #6b4226; /* Dark brown for a vintage look */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+  padding: 10px;
+  background-color: '#ffffff';
+  border-radius: 10px;
+  border: 2px solid #d4c2a8; /* Parchment border color */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 2s ease-in-out; /* Fade-in effect */
+  background: url('Japanese-Stationery-00.jpg'); /* Add a background */
+  background-size: cover;
+  color: #4d2b1f; /* Darker text color for readability */
+}
+  
+  
+
+
+

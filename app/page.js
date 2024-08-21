@@ -17,10 +17,11 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: 'white',
-  border: '2px solid #000',
-  boxShadow: 24,
+  width: 450,
+  bgcolor: '#ffffff',
+  border: '1px solid #e0e0e0',
+  boxShadow: '0px 6px 20px rgba(0, 0, 0, 0.15)',
+  borderRadius: '8px',
   p: 4,
   display: 'flex',
   flexDirection: 'column',
@@ -131,33 +132,28 @@ export default function Home() {
           CHARMING STATIONERIES
         </Typography>
       </Box>
-      <Stack width="1600px" height="700px" spacing={2} overflow={'auto'}>
-        {inventory.map(({name, quantity}) => (
-          <Box
-            key={name}
-            width="100%"
-            minHeight="150px"
-            display={'flex'}
-            justifyContent={'space-between'}
-            alignItems={'center'}
-            bgcolor={'#f0f0f0'}
-            paddingX={5}
-          >
-            <Typography variant={'h3'} color={'#333'} textAlign={'center'}>
-              {name.charAt(0).toUpperCase() + name.slice(1)}
-            </Typography>
-            <Typography variant={'h3'} color={'#333'} textAlign={'center'}>
-              Quantity: {quantity}
-            </Typography>
-            <Button variant="contained" onClick={() => addItem(name)}>
-              Add
-            </Button>
-            <Button variant="contained" onClick={() => removeItem(name)}>
-              Remove
-            </Button>
-          </Box>
-        ))}
-      </Stack>
+      <Stack
+  direction="row"
+  justifyContent="space-between"
+  alignItems="center"
+  spacing={3}
+>
+  {inventory.map(({ name, quantity }) => (
+    <Box key={name} className="item-card">
+      <Typography variant={'h5'}>{name.charAt(0).toUpperCase() + name.slice(1)}</Typography>
+      <Typography variant={'body1'}>Quantity: {quantity}</Typography>
+      <Box>
+        <Button variant="contained" onClick={() => addItem(name)}>
+          Add
+        </Button>
+        <Button variant="outlined" onClick={() => removeItem(name)} sx={{ ml: 2 }}>
+          Remove
+        </Button>
+      </Box>
+    </Box>
+  ))}
+</Stack>
+
     </Box>
   </Box>
 )
